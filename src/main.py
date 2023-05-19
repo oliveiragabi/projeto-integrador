@@ -10,6 +10,7 @@ from flask_sqlalchemy import SQLAlchemy
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
 
+
 main = Blueprint('main', __name__)
 
 @main.route('/')
