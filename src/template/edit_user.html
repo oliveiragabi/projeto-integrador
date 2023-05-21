@@ -1,55 +1,129 @@
 <!--- Template de edição de clientes-->
-{% extends 'layout.html' %} <!-- herda características contidos em layout-->
+{% extends 'layout.html' %}
+<!-- herda características contidos em layout-->
 {% block body %}
-<div class="row">
-    <div class="col-5 mx-auto"> <!-- comandos bootstrap-->
-        <h3>Editar dados</h3><hr>
+<main id="main">
+  <section id="about" class="about" style="width: 100%">
+    <div class="container py-5 h-100" data-aos="fade-up">
+      <div class="row">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+          <!-- comandos bootstrap-->
+          <h1>Editar dados</h1>
+          <hr />
 
-        <!-- publicação do formulário atrvés do metodo POSt para o banco de dados-->
-        <form method="post" action="{{url_for('main.edit_user',id=datas.ID)}}"> 
-             
+          <!-- publicação do formulário atrvés do metodo POSt para o banco de dados-->
+          <form
+            method="post"
+            action="{{url_for('main.edit_user',id=datas.ID)}}"
+          >
             <div class="form group">
-                <label>Serviço</label>
-                <input type="text" name="servico" maxlength="10" required class="form-control" value="{{datas.SERVICO}}">
+              <label>Serviço</label>
+              <input
+                type="text"
+                name="servico"
+                maxlength="10"
+                required
+                class="form-control"
+                value="{{datas.SERVICO}}"
+              />
             </div>
             <div class="form group">
-                <label>Data entrada</label>
-                <input type="text" name="dentrada" maxlength="10" required class="form-control" value="{{datas.DENTRADA}}">
+              <label>Data entrada</label>
+              <input
+                type="text"
+                name="dentrada"
+                maxlength="10"
+                required
+                class="form-control"
+                value="{{datas.DENTRADA}}"
+              />
             </div>
 
             <div class="form group">
-                <label>Data saída</label>
-                <input type="text" name="dsaida" maxlength="10" required class="form-control" value="{{datas.DSAIDA}}">
+              <label>Data saída</label>
+              <input
+                type="text"
+                name="dsaida"
+                maxlength="10"
+                required
+                class="form-control"
+                value="{{datas.DSAIDA}}"
+              />
             </div>
             <div class="form group">
-                <label>Descrição do problema</label>
-                <input type="text" name="descricao" maxlength="60" required class="form-control" value="{{datas.DESCRICAO}}">
+              <label>Descrição do problema</label>
+              <input
+                type="text"
+                name="descricao"
+                maxlength="60"
+                required
+                class="form-control"
+                value="{{datas.DESCRICAO}}"
+              />
             </div>
             <div class="form group">
-                <label>Equipamento</label>
-                <input type="text" name="equipamento" maxlength="30" required class="form-control" value="{{datas.EQUIPAMENTO}}">
+              <label>Equipamento</label>
+              <input
+                type="text"
+                name="equipamento"
+                maxlength="30"
+                required
+                class="form-control"
+                value="{{datas.EQUIPAMENTO}}"
+              />
             </div>
             <div class="form group">
-                <label>Nome</label>
-                <input type="text" name="nome" maxlength="30" required class="form-control" value="{{datas.NOME}}">
+              <label>Nome</label>
+              <input
+                type="text"
+                name="nome"
+                maxlength="30"
+                required
+                class="form-control"
+                value="{{datas.NOME}}"
+              />
             </div>
             <div class="form group">
-                <label>Endereço</label>
-                <input type="text" name="endereco"  maxlength="30" required class="form-control" value="{{datas.ENDERECO}}">
+              <label>Endereço</label>
+              <input
+                type="text"
+                name="endereco"
+                maxlength="30"
+                required
+                class="form-control"
+                value="{{datas.ENDERECO}}"
+              />
             </div>
             <div class="form group">
-                <label>Telefone</label>
-                <input type="text" name="fone" maxlength="15" required class="form-control" value="{{datas.FONE}}">
+              <label>Telefone</label>
+              <input
+                type="text"
+                name="fone"
+                maxlength="15"
+                required
+                class="form-control"
+                value="{{datas.FONE}}"
+              />
             </div>
             <div class="form group">
-                <label>Orçamento</label>
-                <input type="text" name="orcamento" maxlength="200" required class="form-control" value="{{datas.ORCAMENTO}}">
+              <label>Orçamento</label>
+              <input
+                type="text"
+                name="orcamento"
+                maxlength="200"
+                required
+                class="form-control"
+                value="{{datas.ORCAMENTO}}"
+              />
             </div>
-            
-            
+            <hr>
             <!-- confirmação da edição-->
-            <input type="submit" value="Confirmar" class="btn btn-primary">
-        </form>
+            <input type="submit" value="Confirmar" class="btn btn-primary" style="background-color: #37517E;"/>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
-{% endblock %}
+  </section>
+
+  {% endblock %}
+</main>

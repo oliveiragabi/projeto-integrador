@@ -11,7 +11,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-main = Blueprint('main', __name__)
+main = Blueprint('main', __name__, static_folder='static')
 
 @main.route('/')
 def index():
@@ -41,7 +41,7 @@ def add_user(): # aqui a informação enviada do formulário pelo método POST �
        # esta sequência de interrogações serve para evitar sql injection
        con.commit()
        flash("Dados cadastrados","success") # mensagem para usuário, "success" será usado pelo bootstrap
-       return redirect(url_for("login")) # terminado cadastro volta para a página inicial
+       return redirect(url_for("main.home")) # terminado cadastro volta para a página inicial
     return render_template("add_user.html")
 
 @main.route("/home", methods=["GET"])
@@ -71,7 +71,7 @@ def edit_user(id):
        cur.execute("update client set SERVICO=?,DENTRADA=?,DSAIDA=?,DESCRICAO=?,EQUIPAMENTO=?,NOME=?,ENDERECO=?,FONE=? ,ORCAMENTO=? where ID=?",(servico,dentrada,dsaida,descricao,equipamento,nome,endereco,fone,orcamento,id))
        con.commit()
        flash("Dados atualizados", "success")
-       return redirect(url_for("home")) # atualizou, volta para página inicial
+       return redirect(url_for("main.home")) # atualizou, volta para página inicial
     
     con=sql.connect("db.sqlite")
     con.row_factory=sql.Row
@@ -87,4 +87,4 @@ def delete_user(id):
     cur.execute("delete from client where ID=?",(id,))
     con.commit()
     flash("Dados apagados", "warning")
-    return redirect(url_for("home"))
+    return redirect(url_for("main.home"))

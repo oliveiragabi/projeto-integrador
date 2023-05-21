@@ -2,48 +2,66 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="vh-100">
-
-    <div class="container py-5 h-100">
-        <h3 class="title" style="margin-bottom: 20px;">Cadastre-se</h3>
-        <!-- <div class="col-md-8 col-lg-7 col-xl-6">
-            <img src="images/image-login.png"
-              class="img-fluid" alt="Phone image">
-        </div> -->
-
-        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="notification is-danger">
-                    {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+<main id="main">
+    <div >
+        <div class="container py-5 h-100">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <h3 class="title" >Cadastre-se</h3>
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img src="../static/images/image-login.png"
+                      class="img-fluid" alt="Phone image">
                 </div>
-            {% endif %}
-            {% endwith %}
-            <form method="POST" action="/signup">
-                <div class="form-outline mb-4">
-                    <div class="control">
-                        <input class="form-control form-control-lg" type="email" name="email" placeholder="Email" autofocus="">
-                        <label class="form-label">Email</label>
-                    </div>
+        
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="notification is-danger">
+                            {{ messages[0] }}. Go to <a href="{{ url_for('auth.login') }}">login page</a>.
+                        </div>
+                    {% endif %}
+                    {% endwith %}
+                    <form method="POST" action="/signup">
+                        <div class="form-outline mb-4">
+                            <div class="control">
+                                <label class="form-label">Email</label>
+                                <input class="form-control form-control-lg" type="email" name="email" placeholder="Email" autofocus="">
+                            </div>
+                        </div>
+            
+                        <div class="form-outline mb-4">
+                            <div class="control">
+                                <label class="form-label" >Nome</label>
+                                <input  class="form-control form-control-lg" type="text" name="name" placeholder="Name" autofocus="">
+                            </div>
+                        </div>
+            
+                        <div class="form-outline mb-4">
+                            <div class="control">
+                                <label class="form-label" >Senha</label>
+                                <input  class="form-control form-control-lg" type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+            
+                        <button class="btn btn-dark btn-lg btn-block">Cadastrar</button>
+                    </form>
                 </div>
-    
-                <div class="form-outline mb-4">
-                    <div class="control">
-                        <input  class="form-control form-control-lg" type="text" name="name" placeholder="Name" autofocus="">
-                        <label class="form-label" >Nome</label>
-                    </div>
-                </div>
-    
-                <div class="form-outline mb-4">
-                    <div class="control">
-                        <input  class="form-control form-control-lg" type="password" name="password" placeholder="Password">
-                        <label class="form-label" >Senha</label>
-                    </div>
-                </div>
-    
-                <button class="btn btn-dark btn-lg btn-block">Cadastrar</button>
-            </form>
+            </div>
         </div>
     </div>
-</section>
+</main>
+
+<footer id="footer">
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Eletronica Dom Bosco</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 {% endblock %}

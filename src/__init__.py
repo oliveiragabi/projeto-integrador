@@ -9,7 +9,7 @@ from flask_login import LoginManager
 db = SQLAlchemy()
 
 def create_app():
-    app = Flask(__name__, template_folder='template')
+    app = Flask(__name__, template_folder='template', static_folder='static')
 
     app.config['SECRET_KEY'] = 'projeto.integrador.engenharia'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
