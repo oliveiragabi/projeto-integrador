@@ -4,12 +4,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager 
+from src.__init__ import app
+
+
+
 
 # iniciando o SQLAlchemypara usar nos models
 db = SQLAlchemy()
 
+app = Flask(__name__, template_folder='template', static_folder='static')
 def create_app():
-    app = Flask(__name__, template_folder='template', static_folder='static')
 
     app.config['SECRET_KEY'] = 'projeto.integrador.engenharia'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
