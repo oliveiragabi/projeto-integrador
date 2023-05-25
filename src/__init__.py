@@ -9,9 +9,9 @@ from flask_login import LoginManager
 # iniciando o SQLAlchemypara usar nos models
 db = SQLAlchemy()
 
-app = Flask(__name__, template_folder='template', static_folder='static')
-def create_app():
 
+def create_app():
+    app = Flask(__name__, template_folder='template', static_folder='static')
     app.config['SECRET_KEY'] = 'projeto.integrador.engenharia'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 

@@ -3,6 +3,7 @@
 from flask import Blueprint, render_template, request,redirect,url_for,flash
 from flask_login import login_required, current_user
 import sqlite3 as sql
+# from . import db
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
