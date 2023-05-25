@@ -53,6 +53,7 @@ def signup_post():
     # adc o usuario banco de dados
     db.session.add(new_user)
     db.session.commit()
+    
 
     return redirect(url_for('auth.login'))
 

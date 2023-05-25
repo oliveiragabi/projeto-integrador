@@ -14,7 +14,7 @@
           <!-- publicação do formulário atrvés do metodo POSt para o banco de dados-->
           <form
             method="post"
-            action="{{url_for('main.edit_user',id=datas.ID)}}"
+            action="{{url_for('main.edit_user',id=datas.id)}}"
           >
             <div class="form group">
               <label>Serviço</label>
@@ -24,30 +24,30 @@
                 maxlength="10"
                 required
                 class="form-control"
-                value="{{datas.SERVICO}}"
+                value="{{datas.servico}}"
               />
             </div>
             <div class="form group">
               <label>Data entrada</label>
               <input
-                type="text"
+                type="date"
                 name="dentrada"
                 maxlength="10"
                 required
                 class="form-control"
-                value="{{datas.DENTRADA}}"
+                value="{{datas.dentrada}}"
               />
             </div>
 
             <div class="form group">
               <label>Data saída</label>
               <input
-                type="text"
+                type="date"
                 name="dsaida"
-                maxlength="10"
+                maxlength="20"
                 required
                 class="form-control"
-                value="{{datas.DSAIDA}}"
+                value="{{datas.dsaida}}"
               />
             </div>
             <div class="form group">
@@ -58,7 +58,7 @@
                 maxlength="60"
                 required
                 class="form-control"
-                value="{{datas.DESCRICAO}}"
+                value="{{datas.descricao}}"
               />
             </div>
             <div class="form group">
@@ -69,7 +69,7 @@
                 maxlength="30"
                 required
                 class="form-control"
-                value="{{datas.EQUIPAMENTO}}"
+                value="{{datas.equipamento}}"
               />
             </div>
             <div class="form group">
@@ -77,10 +77,10 @@
               <input
                 type="text"
                 name="nome"
-                maxlength="30"
+                maxlength="50"
                 required
                 class="form-control"
-                value="{{datas.NOME}}"
+                value="{{datas.nome}}"
               />
             </div>
             <div class="form group">
@@ -88,32 +88,32 @@
               <input
                 type="text"
                 name="endereco"
-                maxlength="30"
+                maxlength="50"
                 required
                 class="form-control"
-                value="{{datas.ENDERECO}}"
+                value="{{datas.endereco}}"
               />
             </div>
             <div class="form group">
               <label>Telefone</label>
               <input
-                type="text"
+                type="number"
                 name="fone"
                 maxlength="15"
                 required
                 class="form-control"
-                value="{{datas.FONE}}"
+                value="{{datas.fone}}"
               />
             </div>
             <div class="form group">
               <label>Orçamento</label>
               <input
-                type="text"
+                type="number"
                 name="orcamento"
                 maxlength="200"
                 required
                 class="form-control"
-                value="{{datas.ORCAMENTO}}"
+                value="{{datas.orcamento}}"
               />
             </div>
             <hr>

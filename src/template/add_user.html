@@ -12,15 +12,15 @@
                 <form method="post" action="{{url_for('main.add_user')}}">
                     <div class="field">
                         <label>Serviço</label>
-                        <input type="text" name="servico" maxlength="10" required class="form-control">
+                        <input type="text" name="servico" maxlength="20" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Data entrada</label>
-                        <input type="text" name="dentrada" maxlength="10" required class="form-control">
+                        <input type="date" name="dentrada" maxlength="10" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Data saída</label>
-                        <input type="text" name="dsaida" maxlength="10" required class="form-control">
+                        <input type="date" name="dsaida" maxlength="10" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Descrição do problema</label>
@@ -36,15 +36,15 @@
                     </div>
                     <div class="field">
                         <label>Endereço</label>
-                        <input type="text" name="endereco" maxlength="30" required class="form-control">
+                        <input type="text" name="endereco" maxlength="50" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Telefone</label>
-                        <input type="text" name="fone" maxlength="15" required class="form-control">
+                        <input type="number" name="fone" maxlength="15" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Orçamento</label>
-                        <input type="text" name="orcamento" maxlength="200" required class="form-control">
+                        <input type="number" name="orcamento" maxlength="200" required class="form-control">
                     </div>
                     
                 </br>

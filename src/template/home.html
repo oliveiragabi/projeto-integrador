@@ -40,25 +40,25 @@
             </tr>
           </thead>
           <tbody>
-            {% for row in datas %}
+            {% for client in clients %}
             <tr>
               <!--"loop.index vai receber info do campo ID"-->
-              <td>{{loop.index}}</td>
+              <td>{{client.id}}</td>
               <!-- td cria uma coluna para inserção de conteúdo-->
-              <td>{{row.SERVICO}}</td>
-              <td>{{row.DENTRADA}}</td>
-              <td>{{row.DSAIDA}}</td>
-              <td>{{row.DESCRICAO}}</td>
-              <td>{{row.EQUIPAMENTO}}</td>
-              <td>{{row.NOME}}</td>
-              <td>{{row.ENDERECO}}</td>
-              <td>{{row.FONE}}</td>
-              <td>{{row.ORCAMENTO}}</td>
+              <td>{{client.servico}}</td>
+              <td>{{client.dentrada}}</td>
+              <td>{{client.dsaida}}</td>
+              <td>{{client.descricao}}</td>
+              <td>{{client.equipamento}}</td>
+              <td>{{client.nome}}</td>
+              <td>{{client.endereco}}</td>
+              <td>{{client.fone}}</td>
+              <td>{{client.orcamento}}</td>
 
               <!-- definição dos botões editar  e apagar - cada usúario terá seus botões ao lado-->
               <td>
                 <a
-                  href="{{url_for('main.edit_user',id=row.ID)}}"
+                  href="{{url_for('main.edit_user',id=client.id)}}"
                   class="btn btn-primary"
                   style="background-color: #37517E;"
                   >Editar</a
@@ -66,7 +66,7 @@
               </td>
               <td>
                 <a
-                  href="{{url_for('main.delete_user',id=row.ID)}}"
+                  href="{{url_for('main.delete_user',id=client.id)}}"
                   class="btn btn-danger"
                   onclick="return confirm ('Tem certeza que deseja apagar?')"
                   >Deletar</a

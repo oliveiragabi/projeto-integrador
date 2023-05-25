@@ -5,10 +5,8 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager 
 
-
 # iniciando o SQLAlchemypara usar nos models
 db = SQLAlchemy()
-
 
 def create_app():
     app = Flask(__name__, template_folder='template', static_folder='static')
@@ -16,6 +14,7 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
     db.init_app(app)
+    ##db.create_all(app)
 
     login_manager = LoginManager()
     
