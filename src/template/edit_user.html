@@ -111,9 +111,10 @@
             <div class="form group">
               <label>Orçamento</label>
               <input
-                type="number"
+                type="text"
                 name="orcamento"
-                maxlength="200"
+                maxlength="60"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 required
                 class="form-control"
                 value="{{datas.orcamento}}"
