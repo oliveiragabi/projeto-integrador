@@ -16,11 +16,11 @@
                     </div>
                     <div class="field">
                         <label>Data entrada</label>
-                        <input type="date" name="dentrada" maxlength="10" required class="form-control">
+                        <input type="date" id="dentrada" name="dentrada" maxlength="10" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Data saída</label>
-                        <input type="date" name="dsaida" maxlength="10" required class="form-control">
+                        <input type="date" id="dsaida" name="dsaida" maxlength="10" required class="form-control">
                     </div>
                     <div class="field">
                         <label>Descrição do problema</label>
@@ -56,3 +56,16 @@
     
 </main>
 {% endblock %}
+
+<script>
+    function checaData(){
+        var data_entrada = getElementById('dentrada');
+        var data_saida= getElementById('dsaida');
+
+        if(data_entrada > data_saida){
+            alert('Data de entrada não pode ser maior que a data de saída');
+        }else{
+            return false;
+        }
+    }
+</script>

@@ -31,6 +31,7 @@
               <label>Data entrada</label>
               <input
                 type="date"
+                id="dentrada"
                 name="dentrada"
                 maxlength="10"
                 required
@@ -43,6 +44,7 @@
               <label>Data saída</label>
               <input
                 type="date"
+                id="dsaida"
                 name="dsaida"
                 maxlength="20"
                 required
@@ -127,3 +129,15 @@
 
   {% endblock %}
 </main>
+<script>
+  function checaData(){
+      var data_entrada = getElementById('dentrada');
+      var data_saida= getElementById('dsaida');
+
+      if(data_entrada > data_saida){
+          alert('Data de entrada não pode ser maior que a data de saída');
+      }else{
+          return false;
+      }
+  }
+</script>
