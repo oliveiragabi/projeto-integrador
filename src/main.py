@@ -22,13 +22,20 @@ def add_user(): # aqui a informação enviada do formulário pelo método POST �
     if request.method == "POST":
        servico=request.form.get('servico')
        dentrada=request.form.get('dentrada')
-       dsaida=request.form.get('dsaida')
+       if(len(request.form.get('dsaida')) == 0):
+           dsaida = "sem data"
+       else:
+           dsaida = request.form.get('dsaida')
        descricao=request.form.get('descricao')
        equipamento=request.form.get('equipamento')
        nome=request.form.get('nome')
        endereco=request.form.get('endereco')
        fone=request.form.get('fone')
        orcamento=request.form.get('orcamento')
+           
+       if(dentrada > dsaida):
+         flash("A data de entrada nao deve ser maior que a data de saida")
+  
 
        new_client = Client(servico=servico, dentrada=dentrada, dsaida=dsaida, descricao=descricao, 
                            equipamento=equipamento, nome=nome, endereco=endereco, fone=fone, orcamento=orcamento )

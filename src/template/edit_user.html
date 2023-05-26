@@ -19,9 +19,10 @@
             <div class="form group">
               <label>Serviço</label>
               <input
-                type="text"
+                type="number"
                 name="servico"
-                maxlength="10"
+                maxlength="8"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 required
                 class="form-control"
                 value="{{datas.servico}}"
@@ -47,7 +48,6 @@
                 id="dsaida"
                 name="dsaida"
                 maxlength="20"
-                required
                 class="form-control"
                 value="{{datas.dsaida}}"
               />
@@ -101,8 +101,9 @@
               <input
                 type="number"
                 name="fone"
-                maxlength="15"
+                maxlength="14"
                 required
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 class="form-control"
                 value="{{datas.fone}}"
               />
