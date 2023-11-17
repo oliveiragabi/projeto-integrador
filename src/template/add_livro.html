@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<main id="main">
+<section id="about" class="about" style="width: 100%">
+    <div class="container py-5 h-100" data-aos="fade-up">
+        <div class="row">
+            <div class="row d-flex align-items-center justify-content-center h-100 ">
+                <h1 class="title">DADOS PARA CADASTRO</h1> 
+                <!-- cria formulário, usadnod método POST e informa a template para onde serão eviado os dados do form-->
+               
+                <form method="post" action="{{url_for('main.add_livro')}}">
+                    <div class="field">
+                        <label>Titulo</label>
+                        <input type="text" name="titulo" maxlength="100" required class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    </div>
+                    <div class="field">
+                        <label>Autor</label>
+                        <input type="text" id="autor" name="autor" maxlength="50" required class="form-control">
+                    </div>
+                    <div class="field">
+                        <label>Editora</label>
+                        <input type="text" id="editora" name="editora" maxlength="10" class="form-control">
+                    </div>
+                    <div class="field">
+                        <label>Data Lancamento</label>
+                        <input type="text" name="data_lancamento" maxlength="60"  required class="form-control">
+                    </div>
+                    <div class="field">
+                        <label>Descricao</label>
+                        <input type="text" name="descricao" maxlength="30"  required class="form-control">
+                    </div>
+                    <div class="field">
+                        <label>Isbn</label>
+                        <input type="text" name="isbn" maxlength="30"  required class="form-control">
+                    </div>
+                    
+                </br>
+                    <input type="submit" value="Adicionar" class="btn btn-primary" style="background-color: #37517E;">
+                </form>
+            </div>
+    </div>
+    </section>
+    
+</main>
+{% endblock %}
+
+<script>
+    function checaData(){
+        var data_entrada = getElementById('dentrada');
+        var data_saida= getElementById('dsaida');
+
+        if(data_entrada > data_saida){
+            alert('Data de entrada não pode ser maior que a data de saída');
+        }else{
+            return false;
+        }
+    }
+</script>
